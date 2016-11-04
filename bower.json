@@ -1,13 +1,7 @@
 {
-  "lib": {
-    "name": "bower-rails generated lib assets",
-    "dependencies": {
-      // "threex"      : "git@github.com:rharriso/threex.git",
-      // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
-    }
-  },
+  "name": "bitget",
   "vendor": {
-    "name": "bower-rails generated vendor assets",
+    "name": "bower-rails_generated_vendor_assets",
     "dependencies": {
       "angular": "v1.5.8",
       "angular-ui-router": "latest",
