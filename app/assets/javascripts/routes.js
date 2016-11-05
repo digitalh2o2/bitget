@@ -9,6 +9,10 @@
                     url: '/',
                     templateUrl: 'index.html'
                 })
+                .state('about', {
+                    url: '/about',
+                    templateUrl: 'about.html'
+                })
 
             $urlRouterProvider.otherwise('/');
         }]);
