@@ -1,8 +1,13 @@
 <div class="container">
   <div ng-controller="SearchController as vm">
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-4">
       <h1>Search for Game</h1>
-      <input type="text" placeholder="Type Game">
+      <input type="text" ng-model="name" placeholder="Type Game">
+      <h3><li ng-repeat="game in games">
+        {{ game.title }}
+      </li></h3>
+
+
     </div>
   </div>
 </div>

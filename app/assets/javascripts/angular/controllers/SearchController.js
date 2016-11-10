@@ -1,10 +1,24 @@
-function SearchController($scope, GetGameService){
-  var vm = this
-  vm.game = GetGameService.game
-  vm.name = "saul"
-  return vm.name
-  return vm.game
+function SearchController($scope, $http){
+
+  $scope.getGames = function() {
+    return $http.get("https://videogamesrating.p.mashape.com/get.php?count=5&game=God", {"headers": {
+        "x-mashape-key": "CY2zERVH40mshdw3OseAFVF5y3wUp1IQ5l7jsn3fijtdAgYyhD",
+         "accept": "application/json",
+       }
+     })
+      .success(function(resp){
+        $scope.games = resp
+      })
+      .error(function(data){
+        console.log(data)
+      })
+  }
+
+  $scope.getGames()
+
 };
+
+SearchController.$inject = ['$scope', '$http']
 
 angular
   .module('app')
