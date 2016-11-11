@@ -1,20 +1,26 @@
 function SearchController($scope, $http){
 
-  $scope.getGames = function() {
-    return $http.get("https://videogamesrating.p.mashape.com/get.php?count=5&game=God", {"headers": {
+  $scope.search = "mega"
+
+
+  $scope.getGames = function (){
+    return $http.get("https://videogamesrating.p.mashape.com/get.php?count=20&game=" + $scope.search, {"headers": {
         "x-mashape-key": "CY2zERVH40mshdw3OseAFVF5y3wUp1IQ5l7jsn3fijtdAgYyhD",
          "accept": "application/json",
        }
      })
       .success(function(resp){
         $scope.games = resp
+
       })
       .error(function(data){
         console.log(data)
       })
+
   }
 
   $scope.getGames()
+
 
 };
 

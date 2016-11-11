@@ -20,7 +20,7 @@
                 .state('search', {
                     url: '/search',
                     templateUrl: 'search.html',
-                    controller: 'SearchController as vm'
+                    controller: 'SearchController'
                 })
 
             $urlRouterProvider.otherwise('/');
