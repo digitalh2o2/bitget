@@ -3,14 +3,15 @@
     <div class="col-md-6 col-md-offset-4">
       <h1>Search for Game</h1>
       <input type="text" ng-model="search" ng-change="getGames()" ng-model-options="{debounce: 800}" placeholder="Type Game">
+    </div>
 
-        <div ng-repeat="game in games">
-          <p>Title: {{ game.title }}</p>
-          <p>Short Description: {{ game.short_description }}</p>
-          <img src="{{ game.thumb}}">
-        </div>
-
+    <div class="col-md-12" ng-repeat="game in games">
+      <br>
+      <p>Title: {{ game.title }}</p>
+      <p>Short Description: {{ game.short_description }}</p>
+      <img src="{{ game.thumb}}">
 
     </div>
+
   </div>
 </div>

@@ -1,6 +1,6 @@
 function SearchController($scope, $http){
 
-  $scope.search = "mega"
+  $scope.search = ""
 
 
   $scope.getGames = function (){
