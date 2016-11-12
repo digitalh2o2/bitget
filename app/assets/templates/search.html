@@ -15,7 +15,7 @@
     </div>
 
     <div class="row fix-heights">
-      <div class="col-md-6" ng-repeat="game in games" class="row-eq-height">
+      <div class="col-md-6" ng-repeat="game in games | filter: search" class="row-eq-height">
         <br>
         <div class="media">
           <div class="media-left">
