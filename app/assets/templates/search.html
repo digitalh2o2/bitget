@@ -2,15 +2,20 @@
   <div ng-controller="SearchController">
     <div class="col-md-6 col-md-offset-4">
       <h1>Search for Game</h1>
-      <input type="text" ng-model="search" ng-change="getGames()" ng-model-options="{debounce: 800}" placeholder="Type Game">
+      <input type="text" ng-model="search" ng-change="getGames()" ng-model-options="{debounce: 1000}" placeholder="Type Game">
     </div>
-
-    <div class="col-md-12" ng-repeat="game in games">
-      <br>
-      <p>Title: {{ game.title }}</p>
-      <p>Short Description: {{ game.short_description }}</p>
-      <img src="{{ game.thumb}}">
-
+    <div class="row fix-heights">
+      <div class="col-md-6" ng-repeat="game in games">
+        <div class="media">
+          <div class="media-left">
+            <img class="pull-left" src="https://res.cloudinary.com/igdb/image/upload/t_thumb/{{ game.cover.cloudinary_id }}.jpg">
+          </div>
+          <div class="media-body">
+            <p>Title: <a href="{{game.url}}">{{ game.name }}</a></p>
+            <p>Short Description: {{ game.summary }}</p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
