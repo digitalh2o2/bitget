@@ -2,16 +2,28 @@
   <div ng-controller="SearchController">
     <div class="col-md-6 col-md-offset-4">
       <h1>Search for Game</h1>
-      <input type="text" ng-model="search" ng-change="getGames()" ng-model-options="{debounce: 1000}" placeholder="Type Game">
+      <form name="form">
+        <input name="search" ng-model="search" ng-change="getGames()"
+               ng-model-options="{debounce: 1000}" placeholder="Type Game"
+               minlength="3"
+               required="required" />
+               <div ng-messages="form.search.$error" ng-if="form.search.$touched">
+                 <div ng-message="required">Please type a game to search.</div>
+                 <div ng-message="minlength">3 characters required</div>
+               </div>
+      </form>
     </div>
+
     <div class="row fix-heights">
-      <div class="col-md-6" ng-repeat="game in games">
+      <div class="col-md-6" ng-repeat="game in games" class="row-eq-height">
+        <br>
         <div class="media">
           <div class="media-left">
             <img class="pull-left" src="https://res.cloudinary.com/igdb/image/upload/t_thumb/{{ game.cover.cloudinary_id }}.jpg">
           </div>
           <div class="media-body">
             <p>Title: <a href="{{game.url}}">{{ game.name }}</a></p>
+            <p>Release Date: {{ game.first_release_date | date:'mediumDate'}}
             <p>Short Description: {{ game.summary }}</p>
           </div>
         </div>
