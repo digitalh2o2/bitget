@@ -3,7 +3,7 @@
     <div class="col-md-6 col-md-offset-4">
       <h1>Search for Game</h1>
       <form name="form">
-        <input name="search" ng-model="search" 
+        <input name="search" ng-model="search"
                ng-model-options="{debounce: 1000}" placeholder="Type Game"
                minlength="3"
                required="required" />
@@ -19,13 +19,21 @@
         <br>
         <div class="media">
           <div class="media-left">
-            <img class="pull-left" src="https://res.cloudinary.com/igdb/image/upload/t_thumb/{{ game.cover.cloudinary_id }}.jpg">
+            <img class="pull-left img-thumbnail" src="https://res.cloudinary.com/igdb/image/upload/t_thumb/{{ game.cover.cloudinary_id }}.jpg">
           </div>
           <div class="media-body">
-            <p>Title: <a href="{{game.url}}">{{ game.name }}</a></p>
-            <p>Release Date: {{ game.first_release_date | date:'mediumDate'}}
-            <p>Short Description: {{ game.summary }}</p>
-          </div>
+            
+
+                <div class="panel-info">
+                  <p class="panel-heading">Title: <a href="{{game.url}}">{{ game.name }}</a></p>
+                </div>
+
+                <p>Release Date: {{ game.first_release_date | date:'mediumDate'}}
+                  <div ng-if="!game.summary">There is no game summary for this game</div>
+                  <div ng-if="game.summary"><p>Short Description: {{ game.summary }}</p></div>
+
+
+
         </div>
       </div>
     </div>

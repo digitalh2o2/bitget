@@ -1,22 +1,19 @@
 function SearchController($scope, $http, GetGameService){
 
-
   $scope.search = ""
-
-  function getGames(){
-  return GetGameService.getGames($scope.search)
-      .success(function(resp){
-        $scope.games = resp
-        console.log(resp)
-      })
-      .error(function(data){
-        console.log(data)
-      })
-    }
 
   $scope.$watch('search', function(){
     getGames()
   })
+
+  function getGames(){
+    return GetGameService.getGames($scope.search)
+        .then(function(resp){
+          $scope.games = resp.data
+          console.log(resp)
+        });
+    }
+
 };
 
 SearchController.$inject = ['$scope', '$http', 'GetGameService']
