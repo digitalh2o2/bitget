@@ -21,22 +21,15 @@
           <div class="media-left">
             <img class="pull-left img-thumbnail" src="https://res.cloudinary.com/igdb/image/upload/t_thumb/{{ game.cover.cloudinary_id }}.jpg">
           </div>
-          <div class="media-body">
-            
-
-                <div class="panel-info">
-                  <p class="panel-heading">Title: <a href="{{game.url}}">{{ game.name }}</a></p>
-                </div>
-
-                <p>Release Date: {{ game.first_release_date | date:'mediumDate'}}
-                  <div ng-if="!game.summary">There is no game summary for this game</div>
-                  <div ng-if="game.summary"><p>Short Description: {{ game.summary }}</p></div>
-
-
-
+        <div class="media-body">
+          <div class="panel-info">
+            <p class="panel-heading">Title: <a href="{{game.url}}">{{ game.name }}</a></p>
+          </div>
+        <p>Release Date: {{ game.first_release_date | date:'mediumDate'}}
+          <div ng-if="!game.summary">There is no game summary for this game</div>
+          <div ng-if="game.summary"><p>Short Description: {{ game.summary }}</p></div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
