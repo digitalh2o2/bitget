@@ -1,1 +1,24 @@
-Hi
+<div class="container">
+  <div ng-controller="PulseController">
+    <div class="">
+      <h1>Bitget Pulse!</h1>
+      <h3>The pulse brings up the most recent news from the IGDB API.</h3>
+    </div>
+    <br>
+    <div class="row fix-heights">
+      <div class="col-md-6" ng-repeat="pulse in pulses" class="row-eq-height">
+        <div class="media">
+          <div class="media-left">
+            <img class="pull-left" src="{{ pulse.image }}" style="width: 100px; height: 100px">
+          </div>
+          <div class="media-body">
+            <h4><a href="{{ pulse.url }}">{{ pulse.title }}</a></h4>
+              <div ng-if="!pulse.author"></div>
+              <div ng-if="pulse.author"><h5>Written by: {{ pulse.author }}</h5></div>
+            <h5>Published at: {{ pulse.published_at | date:'mediumDate' }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

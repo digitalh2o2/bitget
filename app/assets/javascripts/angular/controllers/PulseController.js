@@ -7,6 +7,8 @@ function PulseController($scope, PulseService){
         console.log(resp)
       })
   }
+
+  getPulse()
 }
 
 PulseController.$inject = ["$scope", "PulseService"]
