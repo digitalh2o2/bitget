@@ -22,6 +22,11 @@
                     templateUrl: 'search.html',
                     controller: 'SearchController'
                 })
+                .state('pulse', {
+                    url: '/pulse',
+                    templateUrl: 'pulse.html',
+                    controller: 'PulseController'
+                })
 
             $urlRouterProvider.otherwise('/');
         }]);
