@@ -3,7 +3,7 @@
 }
 
 .footer {
-   position:absolute;
+   position:fixed;
    bottom:0;
    text-align: center;
    width:100%;
@@ -17,4 +17,8 @@
 img {
     display: block;
     margin: 0 auto;
+}
+
+.searchbar {
+  text-align: center;
 }
