@@ -27,6 +27,14 @@
                     templateUrl: 'pulse.html',
                     controller: 'PulseController'
                 })
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'devise/login.html'
+                })
+                .state('register', {
+                    url: '/register',
+                    templateUrl: 'devise/register.html'
+                })
 
             $urlRouterProvider.otherwise('/');
         }]);
