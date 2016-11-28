@@ -47,6 +47,10 @@
                       })
                     }
                 })
+                .state('list', {
+                  url: '/list',
+                  templateUrl: 'list.html'
+                })
 
             $urlRouterProvider.otherwise('/');
         }]);
