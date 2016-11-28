@@ -22,7 +22,6 @@
       <ul class="nav navbar-nav navbar-right">
       <li ng-hide="signedIn()"><a href="" ui-sref="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
       <li ng-hide="signedIn()"><a href="" ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li ng-show="signedIn()" ng-if="user">Welcome {{user.username}}</li>
       <li ng-show="signedIn()"><a href="" ng-click="logout()"> Logout</a></li>
     </ul>
     </div><!-- /.navbar-collapse -->
