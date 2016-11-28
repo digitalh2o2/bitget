@@ -29,7 +29,8 @@
                 })
                 .state('login', {
                     url: '/login',
-                    templateUrl: 'devise/login.html'
+                    templateUrl: 'devise/login.html',
+                    controller: 'AuthController'
                 })
                 .state('register', {
                     url: '/register',

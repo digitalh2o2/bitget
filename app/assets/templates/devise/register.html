@@ -1,1 +1,17 @@
-Hello again
+<div class="col-lg-8 col-lg-offset-2">
+  <h1 class="centered-text">Register</h1>
+  <form ng-submit="register()">
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Email" ng-model="user.email" autofocus>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+    </div>
+    <input type="submit" class="btn btn-info" value="Register">
+  </form>
+  <br>
+
+  <div class="panel-footer">
+    Already signed up? <a ui-sref="login">Log In</a>
+  </div>
+</div>
