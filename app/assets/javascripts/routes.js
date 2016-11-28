@@ -30,11 +30,22 @@
                 .state('login', {
                     url: '/login',
                     templateUrl: 'devise/login.html',
-                    controller: 'AuthController'
+                    controller: 'AuthController',
+                    onEnter: function(Auth, $state){
+                      Auth.currentUser().then(function(){
+                        $state.go('home')
+                      })
+                    }
                 })
                 .state('register', {
                     url: '/register',
-                    templateUrl: 'devise/register.html'
+                    templateUrl: 'devise/register.html',
+                    controller: 'AuthController',
+                    onEnter: function(Auth, $state){
+                      Auth.currentUser().then(function(){
+                        $state.go('home')
+                      })
+                    }
                 })
 
             $urlRouterProvider.otherwise('/');
