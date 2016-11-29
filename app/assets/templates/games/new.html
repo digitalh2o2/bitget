@@ -3,13 +3,13 @@
     <h1>Create a game</h1>
   </div>
 
-  <form>
+  <form validate ng-submit="addGame()">
     <label for="title">Title</label>
-    <input name="title">
+    <input name="title" ng-model="game.title">
     <label for="score">Score</label>
-    <input name="score">
+    <input name="score" ng-model="game.score">
     <label for="short_description">Short Description</label>
-    <input name="short_description">
+    <input name="short_description" ng-model="game.short_description">
     <input type="submit" value="Create Game">
   </form>
 </div>

@@ -1,6 +1,6 @@
 function Game($resource) {
   var Game =
-  $resource('/api/v1/games/:id.json', {id:
+  $resource('http://localhost:3000/api/v1/games/:id.json', {id:
     '@id'}, {
       update: { method: 'PUT' }
     });

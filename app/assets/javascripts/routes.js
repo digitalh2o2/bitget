@@ -53,7 +53,8 @@
                 })
                 .state('new',{
                   url: '/new',
-                  templateUrl: 'games/new.html'
+                  templateUrl: 'games/new.html',
+                  controller: 'NewGameController'
                 })
 
             $urlRouterProvider.otherwise('/');

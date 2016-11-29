@@ -12,7 +12,7 @@ module Api
       end
 
       def create
-        @game = Game.new(note_params)
+        @game = Game.new(game_params)
         if @game.save
           respond_to do |format|
             format.json { render :json => @game }
@@ -22,7 +22,7 @@ module Api
 
       def update
         @game = Game.find(params[:id])
-        if @game.update(note_params)
+        if @game.update(game_params)
           respond_to do |format|
             format.json { render :json => @game }
           end
@@ -34,7 +34,7 @@ module Api
       end
 
       private
-      def todo_params
+      def game_params
         params.require(:game).permit(:title, :score, :short_description)
       end
     end
