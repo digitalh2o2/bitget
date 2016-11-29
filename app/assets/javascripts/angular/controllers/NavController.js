@@ -1,4 +1,4 @@
-function NavController($scope, Auth, $rootScope){
+function NavController($scope, Auth, $rootScope, $location){
   $scope.signedIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
 
@@ -17,6 +17,7 @@ function NavController($scope, Auth, $rootScope){
   $scope.$on('devise:logout', function(e, user){
     alert("You have been logged out.")
     $rootScope.user = undefined
+    $location.path('home')
   });
 }
 
