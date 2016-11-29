@@ -1,7 +1,15 @@
 <div class="container">
   <h1>Community Games!</h1>
-  <li><a href="" ui-sref="new">Add Game to List</a></li>
-  <div class="col-md-12">
-
+  <h3><a href="" ui-sref="new">Add Game to List</a></h3>
+  <div class="col-md-12" ng-controller="GamesController">
+    <ul>
+      <li ng-repeat="game in games">
+        <h3>Title: {{ game.title }}</h3>
+        <h4>Game Score by User: {{ game.score }}</h4>
+        <p>
+          Short Description: {{ game.short_description }}
+        </p>
+      </li>
+    </ul>
   </div>
 </div>
