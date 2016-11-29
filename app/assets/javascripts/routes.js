@@ -51,10 +51,20 @@
                   url: '/list',
                   templateUrl: 'games/list.html'
                 })
-                .state('new',{
+                .state('new', {
                   url: '/new',
                   templateUrl: 'games/new.html',
                   controller: 'NewGameController'
+                })
+                .state('show', {
+                  url: '/game/:id',
+                  templateUrl: 'games/show.html',
+                  controller: 'ViewGameController'
+                })
+                .state('edit', {
+                  url: '/edit/:id',
+                  templateUrl: 'games/edit.html',
+                  controller: 'EditGameController'
                 })
 
             $urlRouterProvider.otherwise('/');

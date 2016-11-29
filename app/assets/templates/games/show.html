@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Info on Game {{ game.title }}</h1>
+  <div class="col-md-12">
+    <h3>{{ game.score }}</h3>
+    <p>
+      {{ game.short_description }}
+    </p>
+    <p><a href="" ui-sref="edit({id: game.id})">Edit Game</a></p>
+  </div>
+</div>

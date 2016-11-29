@@ -5,10 +5,9 @@
     <ul>
       <li ng-repeat="game in games">
         <h3>Title: {{ game.title }}</h3>
-        <h4>Game Score by User: {{ game.score }}</h4>
-        <p>
-          Short Description: {{ game.short_description }}
-        </p>
+        <p><a href="" ui-sref="show({id: game.id})">Click for more details</a></p>
+        <p><a href="" ui-sref="edit({id: game.id})">Edit Game</a></p>
+        <p><a href ng-click="deleteGame(game)">Delete Game?</a></p>
       </li>
     </ul>
   </div>

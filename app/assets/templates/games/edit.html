@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1>Edit Game {{ game.title }}</h1>
+  </div>
+
+  <form validate ng-submit="editGame()">
+    <label for="title">Title</label>
+    <input name="title" ng-model="game.title">
+    <label for="score">Score</label>
+    <input name="score" ng-model="game.score">
+    <label for="short_description">Short Description</label>
+    <input name="short_description" ng-model="game.short_description">
+    <input type="submit" value="Update Game">
+  </form>
+</div>
