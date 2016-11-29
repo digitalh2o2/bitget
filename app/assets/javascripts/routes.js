@@ -47,9 +47,13 @@
                       })
                     }
                 })
-                .state('list', {
+                .state('games', {
                   url: '/list',
-                  templateUrl: 'list.html'
+                  templateUrl: 'games/list.html'
+                })
+                .state('new',{
+                  url: '/new',
+                  templateUrl: 'games/new.html'
                 })
 
             $urlRouterProvider.otherwise('/');
