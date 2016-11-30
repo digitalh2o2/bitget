@@ -7,6 +7,7 @@ function GamesController($scope, Game, $location, $state){
       $state.go($state.current, {}, {reload: true});
     });
   };
+
 }
 
 GamesController.$inject = ["$scope", "Game", "$location", "$state"]
